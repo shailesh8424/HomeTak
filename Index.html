@@ -777,7 +777,7 @@
 
 
  <!-- Booking Modal -->
-  <div class="modal fade" id="bookingModal" tabindex="-1" aria-hidden="true">
+  <!-- <div class="modal fade" id="bookingModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <form id="bookingForm" enctype="multipart/form-data">
@@ -795,6 +795,24 @@
               <label class="form-label">Mobile Number</label>
               <input required name="phone" class="form-control" placeholder="Mobile number">
             </div>
+
+            <div class="mb-2">
+            <label class="form-label">Choose Service</label>
+            <select name="serviceName" class="form-control" required>
+                <option value="">-- Select a Service --</option>
+                <option value="Home Painting (Interior & Exterior)">Home Painting (Interior & Exterior)</option>
+                <option value="All Types of Furniture">All Types of Furniture</option>
+                <option value="POP & False Ceiling">POP & False Ceiling</option>
+                <option value="Electrical Work">Electrical Work</option>
+                <option value="Civil Work">Civil Work</option>
+                <option value="Plumbing Work">Plumbing Work</option>
+                <option value="AC Wiring & Installation">AC Wiring & Installation</option>
+                <option value="Deep Cleaning Service">Deep Cleaning Service</option>
+                <option value="Modular Kitchen">Modular Kitchen</option>
+                <option value="Sliding Windows">Sliding Windows</option>
+                <option value="Invisible Grill Work">Invisible Grill Work</option>
+            </select>
+            </div>
             <div class="mb-2">
               <label class="form-label">Date & Time</label>
               <input type="datetime-local" name="datetime" class="form-control">
@@ -807,10 +825,7 @@
               <label class="form-label">Attach Screenshot / Photo (optional)</label>
               <input type="file" name="attachment" class="form-control">
             </div>
-            <div class="mb-2">
-              <label class="form-label">Special Instructions</label>
-              <input name="notes" class="form-control" placeholder="Any details (e.g., area size, problem)">
-            </div>
+           
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -819,7 +834,7 @@
         </form>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
 
@@ -889,7 +904,7 @@
     <!-- ALL PLUGINS -->
     <script src="Home/js/custom.js"></script>
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
     const bookingModal = new bootstrap.Modal(document.getElementById('bookingModal'));
@@ -917,6 +932,286 @@ document.addEventListener('DOMContentLoaded', function(){
         this.reset();
     });
 });
+</script> -->
+
+
+<!-- Close (X) button -->
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+<!-- Footer Close Button -->
+<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+<!-- Load Bootstrap JS only once -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+ <!-- Booking Modal -->
+  <div class="modal fade" id="bookingModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <form id="bookingForm" enctype="multipart/form-data">
+          <div class="modal-header">
+            <h5 class="modal-title">Book Service</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" id="serviceName" name="serviceName">
+            <div class="mb-2">
+              <label class="form-label">Full Name</label>
+              <input required name="name" class="form-control" placeholder="Your name">
+            </div>
+            <div class="mb-2">
+              <label class="form-label">Mobile Number</label>
+              <input required name="phone" class="form-control" placeholder="Mobile number">
+            </div>
+
+			<div class="mb-2">
+			  <label class="form-label">Choose Service</label>
+			  <select name="serviceName" class="form-control" required>
+				<option value="">-- Select a Service --</option>
+				<option value="Home Painting (Interior & Exterior)">Home Painting (Interior & Exterior)</option>
+				<option value="All Types of Furniture">All Types of Furniture</option>
+				<option value="POP & False Ceiling">POP & False Ceiling</option>
+				<option value="Electrical Work">Electrical Work</option>
+				<option value="Civil Work">Civil Work</option>
+				<option value="Plumbing Work">Plumbing Work</option>
+				<option value="AC Wiring & Installation">AC Wiring & Installation</option>
+				<option value="Deep Cleaning Service">Deep Cleaning Service</option>
+				<option value="Modular Kitchen">Modular Kitchen</option>
+				<option value="Sliding Windows">Sliding Windows</option>
+				<option value="Invisible Grill Work">Invisible Grill Work</option>
+			  </select>
+			</div>
+
+
+            <div class="mb-2">
+              <label class="form-label">Date & Time</label>
+              <input type="datetime-local" name="datetime" class="form-control">
+            </div>
+            <div class="mb-2">
+              <label class="form-label">Address</label>
+              <textarea name="address" class="form-control" rows="2" placeholder="Service address"></textarea>
+            </div>
+            <div class="mb-2">
+              <label class="form-label">Attach Screenshot / Photo (optional)</label>
+              <input type="file" name="attachment" class="form-control">
+            </div>
+             <!-- <div class="mb-2">
+              <label class="form-label">Special Instructions</label>
+              <input name="notes" class="form-control" placeholder="Any details (e.g., area size, problem)">
+            </div> -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary">Send Booking</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    const bookingModal = new bootstrap.Modal(document.getElementById('bookingModal'));
+    const modalTitle = document.querySelector('#bookingModal .modal-title');
+    const serviceNameInput = document.getElementById('serviceName');
+
+    // All buttons with .book-btn will trigger modal
+    document.querySelectorAll('.book-btn').forEach(btn => {
+        btn.addEventListener('click', function(){
+            const service = this.getAttribute('data-service') || 'Service';
+            serviceNameInput.value = service;
+            modalTitle.textContent = 'Book - ' + service;
+            bookingModal.show();
+        });
+    });
+
+    // Handle booking form submit
+    document.getElementById('bookingForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        const form = new FormData(this);
+        alert(
+            `Booking request sent for: ${form.get('serviceName')}\nName: ${form.get('name')}\nPhone: ${form.get('phone')}`
+        );
+        bookingModal.hide();
+        this.reset();
+    });
+});
+</script>
+
+
+
+
+
+
+<style>
+  /* Custom Modal Styling */
+  .custom-modal .modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.2);
+    overflow: hidden;
+  }
+  .custom-modal .modal-header {
+    background: linear-gradient(135deg, #007bff, #00b4d8);
+    color: #fff;
+    border-bottom: none;
+  }
+  .custom-modal .modal-title {
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+  .custom-modal .btn-close {
+    filter: brightness(0) invert(1);
+  }
+  .custom-modal .modal-body {
+    padding: 25px;
+    background-color: #f9f9f9;
+  }
+  .custom-modal .form-control, 
+  .custom-modal select {
+    border-radius: 10px;
+  }
+  .custom-modal .modal-footer {
+    border-top: none;
+    background-color: #f9f9f9;
+  }
+  .custom-modal .btn-primary {
+    border-radius: 10px;
+    padding: 8px 18px;
+  }
+
+  #estimateModal .modal-content {
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+#estimateModal .modal-header {
+  background: linear-gradient(135deg, #007bff, #00b4d8);
+  color: white;
+  border-bottom: none;
+  padding: 15px 20px;
+}
+
+#estimateModal .modal-title {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+/* Close (X) Button Styling */
+#estimateModal .btn-close {
+  background-color: white;
+  border-radius: 50%;
+  opacity: 1;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: invert(0) brightness(100%);
+  transition: all 0.3s ease;
+}
+
+#estimateModal .btn-close:hover {
+  background-color: #ff4d4d;
+  filter: invert(1) brightness(200%);
+  transform: rotate(90deg);
+}
+
+/* Footer "Close" Button Styling */
+#estimateModal .btn-secondary {
+  border-radius: 8px;
+  background-color: #6c757d;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+#estimateModal .btn-secondary:hover {
+  background-color: #5a6268;
+  transform: scale(1.05);
+}
+
+/* Primary Button */
+#estimateModal .btn-primary {
+  border-radius: 8px;
+  background: linear-gradient(135deg, #007bff, #00b4d8);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+#estimateModal .btn-primary:hover {
+  background: linear-gradient(135deg, #0056b3, #0086a8);
+  transform: scale(1.05);
+}
+</style>
+
+<!-- Get Free Estimate Modal -->
+<div class="modal fade custom-modal" id="estimateModal" tabindex="-1" aria-labelledby="estimateModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form id="estimateForm">
+        <div class="modal-header">
+          <h5 class="modal-title" id="estimateModalLabel">Get Free Estimate</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Full Name</label>
+            <input required name="name" class="form-control" placeholder="Enter your name">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Mobile Number</label>
+            <input required name="phone" class="form-control" placeholder="Enter your mobile number">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Choose Service</label>
+            <select name="service" class="form-control" required>
+              <option value="">-- Select a Service --</option>
+              <option>Home Painting (Interior & Exterior)</option>
+              <option>All Types of Furniture</option>
+              <option>POP & False Ceiling</option>
+              <option>Electrical Work</option>
+              <option>Civil Work</option>
+              <option>Plumbing Work</option>
+              <option>AC Wiring & Installation</option>
+              <option>Deep Cleaning Service</option>
+              <option>Modular Kitchen</option>
+              <option>Sliding Windows</option>
+              <option>Invisible Grill Work</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Your Address</label>
+            <textarea name="address" class="form-control" rows="2" placeholder="Enter service address"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Get Estimate</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  // Auto open modal on page load after 1 second
+  window.addEventListener('DOMContentLoaded', () => {
+    const estimateModal = new bootstrap.Modal(document.getElementById('estimateModal'));
+    setTimeout(() => {
+      estimateModal.show();
+    }, 1000);
+  });
+
+  // Form submit action
+  document.getElementById('estimateForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Your free estimate request has been sent successfully!');
+    bootstrap.Modal.getInstance(document.getElementById('estimateModal')).hide();
+    this.reset();
+  });
 </script>
 </body>
 </html>
